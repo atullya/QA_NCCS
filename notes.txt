@@ -1,0 +1,47 @@
+        +++++++++++++++++
+        ++ Annotations ++
+        +++++++++++++++++
+
+        test.beforeAll
+        test.beforeEach
+        test.describe
+        test ->sabai test case haru yesma halxam
+        test.skip->euta particular test case skip hanney
+        test.fail
+        test.only->jun jun test case haleko tyo tyo matra run hunney!!
+        test.slow->delay the test case 3 sec ko test case lai 9 sec samma slow garuney 
+        test.afterEach->sabai test case sakeypaxi yo test garney ki ta sab test case sakkey paxi yo run hunxa
+        test.AfterAll
+
+
+
+        #Absolute X Path
+        /html/body/d360-ui-root/div/site-document/site-page-loader/div/site-docs-section/div/div/site-docs-content-panel-container/div/d360-article-header/div[1]/h1
+
+
+        #Relative X Path
+
+        //*[@id="articleContent"]/h3[1]
+
+        Xpath= //input[@type='text']
+               //input[@id='txtUserName']
+
+        //*[@id="txtUserName"]
+
+
+        Text Path example
+        xpath= //strong[text()='What are XPath axes.']
+
+XPath axes methods
+1) Following
+        Xpath= //input[@type='text']//following::input
+
+        2) Ancestor
+
+        Xpath= //input[text()='Ancestor']//ancestor::div
+
+        3) Child
+        Xpath= //input
+
+        4) Precending
+        Xpath= //input[@type='text']//precending::input

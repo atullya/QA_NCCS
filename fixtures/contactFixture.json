@@ -1,0 +1,19 @@
+{
+  "validUser": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthdate": "1990-01-01",
+    "email": "john.doe@example.com",
+    "phone": "1234567890",
+    "street1": "123 Test Street",
+    "street2": "Apt 1",
+    "city": "Testville",
+    "stateProvince": "TS",
+    "postalCode": "12345",
+    "country": "Testland"
+  },
+  "editUser": {
+    "firstName": "JohnUpdated",
+    "lastName": "DoeUpdated"
+  }
+}

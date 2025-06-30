@@ -1,0 +1,10 @@
+{
+    "validUser":{
+        "userName":"NCCSCSIT454",
+        "password":"atullya123321"
+    },
+    "invalidUser":{
+        "userName":"invaliduser",
+        "password":"wrongpassword"
+    }
+}
