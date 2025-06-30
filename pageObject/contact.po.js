@@ -286,7 +286,9 @@ exports.TestPage = class TestPage {
     await this.page.locator(this.saveEditButton).click();
     await this.page.waitForTimeout(2000);
     // await expect(this.page).toHaveURL("/contactDetails");
-    console.log('aosdfhsadf')
+    console.log("aosdfhsadf");
+    console.log("aosdfhsadf");
+    console.log("aosdfhsadf");
   }
   async contactDelete() {
     await this.page.waitForTimeout(1000); // wait for redirect or manual
