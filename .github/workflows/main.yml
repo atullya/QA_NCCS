@@ -1,0 +1,30 @@
+name: Playwright Tests - By Atullya
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: "30 1 * * 1-5" #At 01:30 AM, Monday through Friday
+  workflow_dispatch:
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/steup-node@v4
+      - name: Install dependecies
+        run: npm ci
+      - name: Run Playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+          # Uploads the Playwright test report even if tests fail
+          # Stores it as an artifact named 'playwright-report'
+          # Keeps the artifact for 30 days
