@@ -1,24 +1,35 @@
 name: Playwright Tests - By Atullya
 
+# Triggers for the workflow
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
-  schedule:
-    - cron: "30 1 * * 1-5" #At 01:30 AM, Monday through Friday
-  workflow_dispatch:
+  push:                  # Run the workflow on push events
+    branches: ["main"]   # Only for the 'main' branch
+  pull_request:          # Run the workflow on pull request events
+    branches: ["main"]   # Only when PR targets the 'main' branch
+  schedule:              # Schedule to run at 01:30 AM from Monday to Friday
+    - cron: "30 1 * * 1-5"
+  workflow_dispatch:     # Allows manual trigger from the GitHub UI
 
 jobs:
   test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
+    timeout-minutes: 60  # Maximum time allowed for the job to run (1 hour)
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/steup-node@v4
-      - name: Install dependecies
+        # Checks out your repository's code into the workflow
+
+      - uses: actions/setup-node@v4
+        # Sets up Node.js environment (corrected spelling from 'steup' to 'setup')
+
+      - name: Install dependencies
         run: npm ci
+        # Installs Node.js dependencies based on your package-lock.json (clean install)
+
       - name: Run Playwright test
+        run: npx playwright test
+        # Executes Playwright tests
+
       - uses: actions/upload-artifact@v4
         if: always()
         with:
