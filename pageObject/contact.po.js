@@ -288,6 +288,7 @@ exports.TestPage = class TestPage {
     // await expect(this.page).toHaveURL("/contactDetails");
   }
   async contactDelete() {
+    console.log("huhuhu");
     await this.page.waitForTimeout(1000); // wait for redirect or manual
     this.page.once("dialog", async (dialog) => {
       console.log("Dialog message:", dialog.message());
